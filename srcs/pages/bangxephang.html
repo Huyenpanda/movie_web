@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Xếp Hạng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/bxh.css">
+  <script src="../js/bxh.js"></script>
+</head>
+
+<body class="dark-mode">
+  <div class="container">
+    <div class="header" style="height: 40px;"></div>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="../../public/img/bautroixanhcuaem.jpeg" style="width:100%">
+        <div class="text">PHIM MỚI</div>
+      </div>
+      <div class="mySlides fade">
+        <img src="../../public/img/chunibyo.jpeg" style="width:100%">
+        <div class="text">PHIM MỚI</div>
+      </div>
+      <div class="mySlides fade">
+        <img src="../../public/img/godzilla.jpg" style="width:100%">
+        <div class="text">PHIM MỚI</div>
+      </div>
+      <div class="mySlides fade">
+        <img src="../../public/img/tomuonantuycuacau.jpeg" style="width:100%">
+        <div class="text">PHIM MỚI</div>
+      </div>
+      <div class="mySlides fade">
+        <img src="../../public/img/lantron.png" style="width:100%">
+        <div class="text">PHIM MỚI</div>
+      </div>
+    </div>
+
+    <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <div class="breadcrumb">
+      <a href="./body.html">Trang chủ</a>
+      >>
+      <a href="../Tim_phim_the_loai/theloai.html">Bảng xếp hạng:</a>
+    </div>
+    <p class="movie_name">PHIM HAY - CÀNG XEM CÀNG CUỐN!</p>
+    <div class="button-container">
+      <div class="row">
+        <button class="btn" onclick="scrollToSection('top-all')">Top All</button>
+        <button class="btn" onclick="scrollToSection('top-day')">Top Ngày</button>
+        <button class="btn" onclick="scrollToSection('top-month')">Top Tháng</button>
+        <button class="btn" onclick="scrollToSection('top-year')">Top Năm</button>
+        <button class="btn" onclick="scrollToSection('top-view')">Top View</button>
+        <button class="btn" onclick="scrollToSection('top-like')">Top Like</button>
+        <button class="btn" onclick="scrollToSection('top-follow')">Top Follow</button>
+      </div>
+    </div>
+
+    <section id="filters-sorting">
+      <div id="filters">
+        <form id="form-filter" class="form-filter" method="GET" action="/">
+          <div class="filter-item">
+            <select name="filter[sort]" form="form-filter" class="input form-control" id="order">
+              <option value="">Sắp xếp</option>
+              <option value="update">Thời gian cập nhật</option>
+              <option value="create">Thời gian đăng</option>
+              <option value="year">Năm sản xuất</option>
+              <option value="view">Lượt xem</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <select id="sort-options" class="input form-control">
+              <option value="popular">Phổ biến nhất</option>
+              <option value="newest">Mới nhất</option>
+              <option value="rating">Đánh giá cao nhất</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <select name="filter[type]" form="form-filter" class="input form-control" id="type">
+              <option value="series">Phim bộ</option>
+              <option value="single">Phim lẻ</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <select name="filter[category]" form="form-filter" class="input form-control" id="cat_id">
+              <option value="0" selected>Thể loại</option>
+              <option value="9">Chiến Tranh</option>
+              <option value="19">Cổ Trang</option>
+              <option value="13">Gia Đình</option>
+              <option value="11">Hài Hước</option>
+              <option value="2">Hành Động</option>
+              <option value="17">Hình Sự</option>
+              <option value="12">Hoạt Hình</option>
+              <option value="7">Học Đường</option>
+              <option value="15">Khoa Học</option>
+              <option value="5">Kinh Dị</option>
+              <option value="21">Kinh Điển</option>
+              <option value="1">Tài Liệu</option>
+              <option value="4">Tâm Lý</option>
+              <option value="22">Thần Thoại</option>
+              <option value="20">Thể Thao</option>
+              <option value="3">Tình Cảm</option>
+              <option value="23">TV Shows</option>
+              <option value="14">Viễn Tưởng</option>
+              <option value="10">Võ Thuật</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <select name="filter[region]" form="form-filter" class="input form-control" id="city_id">
+              <option value="">Quốc gia</option>
+              <option value="32">Ấn Độ</option>
+              <option value="7">Anh</option>
+              <option value="18">Bỉ</option>
+              <option value="10">Canada</option>
+              <option value="22">Đài Loan</option>
+              <option value="19">Đan Mạch</option>
+              <option value="14">Đức</option>
+              <option value="25">Hà Lan</option>
+              <option value="12">Hàn Quốc</option>
+              <option value="6">Hồng Kông</option>
+              <option value="20">Nga</option>
+              <option value="3">Nhật Bản</option>
+              <option value="8">Pháp</option>
+              <option value="4">Thái Lan</option>
+              <option value="30">Thụy Điển</option>
+              <option value="28">Thụy Sĩ</option>
+              <option value="2">Trung Quốc</option>
+              <option value="5">Úc</option>
+              <option value="40">Việt Nam</option>
+              <option value="13">Quốc Gia Khác</option>
+            </select>
+          </div>
+          <div class="filter-item">
+            <select name="filter[year]" form="form-filter" class="input form-control" id="year">
+              <option value="">Năm</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+              <option value="2012">2012</option>
+              <option value="2011">2011</option>
+              <option value="2010">2010</option>
+              <option value="2009">2009</option>
+              <option value="2008">2008</option>
+              <option value="2007">2007</option>
+              <option value="2006">2006</option>
+              <option value="2005">2005</option>
+              <option value="2004">2004</option>
+              <option value="2003">2003</option>
+              <option value="2002">2002</option>
+              <option value="2001">2001</option>
+              <option value="2000">2000</option>
+              <option value="1999">1999</option>
+              <option value=""></option>
+            </select>
+          </div>
+          <button class="btn btn-success" onclick="alert('Filter success!')">
+            <i class="fa-solid fa-filter"></i>Lọc phim
+          </button>
+        </form>
+        <input type="text" id="search-bar" placeholder="Tìm kiếm...">
+      </div>
+    </section>
+
+    <div class="content-container">
+      <aside class="category-sidebar">
+        <ul class="category-list">
+          <li><a href="#">Chiến Tranh</a></li>
+          <li><a href="#">Cổ Trang</a></li>
+          <li><a href="#">Gia Đình</a></li>
+          <li><a href="#">Hài Hước</a></li>
+          <li><a href="#">Hành Động</a></li>
+          <li><a href="#">Hình Sự</a></li>
+          <li><a href="#">Hoạt Hình</a></li>
+          <li><a href="#">Học Đường</a></li>
+          <li><a href="#">Khoa Học</a></li>
+          <li><a href="#">Kinh Dị</a></li>
+          <li><a href="#">Kinh Điển</a></li>
+          <li><a href="#">Tài Liệu</a></li>
+          <li><a href="#">Tâm Lý</a></li>
+          <li><a href="#">Thần Thoại</a></li>
+          <li><a href="#">Thể Thao</a></li>
+          <li><a href="#">Tình Cảm</a></li>
+          <li><a href="#">TV Shows</a></li>
+          <li><a href="#">Viễn Tưởng</a></li>
+          <li><a href="#">Võ Thuật</a></li>
+        </ul>
+      </aside>
+      <div class="main-content">
+        <div class="section" id="top-all">
+          <p class="tex_top">TOP ALL</p>
+          <div class="movie">
+            <div class="movie-i">
+              <p class="top-number">01</p>
+              <div>
+                <img class="img_phim" src="../../public/img/belle.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">RỒNG VÀ CÔNG CHÚA TÀN NHANG</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">02</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chuyentaubanggia.jpg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">CHUYẾN TÀU BĂNG GIÁ</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 12.190</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">03</p>
+              <div>
+                <img class="img_phim" src="../../public/img/conganhmachay.png" alt="bautroixanhcuaem" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Cõng Anh Mà Chạy</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 19.234</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">04</p>
+              <div>
+                <img class="img_phim" src="../../public/img/giuaconbaotuyet.png" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">GIỮA CƠN BÃO TUYẾT</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">05</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chunibyo.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Chunibyo</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.342</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="top-all">
+          <p class="tex_top">TOP NGÀY</p>
+          <div class="movie">
+            <div class="movie-i">
+              <p class="top-number">01</p>
+              <div>
+                <img class="img_phim" src="../../public/img/belle.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">RỒNG VÀ CÔNG CHÚA TÀN NHANG</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">02</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chuyentaubanggia.jpg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">CHUYẾN TÀU BĂNG GIÁ</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 12.190</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">03</p>
+              <div>
+                <img class="img_phim" src="../../public/img/conganhmachay.png" alt="bautroixanhcuaem" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Cõng Anh Mà Chạy</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 19.234</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">04</p>
+              <div>
+                <img class="img_phim" src="../../public/img/giuaconbaotuyet.png" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">GIỮA CƠN BÃO TUYẾT</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">05</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chunibyo.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Chunibyo</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.342</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="top-all">
+          <p class="tex_top">TOP THÁNG</p>
+          <div class="movie">
+            <div class="movie-i">
+              <p class="top-number">01</p>
+              <div>
+                <img class="img_phim" src="../../public/img/belle.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">RỒNG VÀ CÔNG CHÚA TÀN NHANG</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">02</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chuyentaubanggia.jpg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">CHUYẾN TÀU BĂNG GIÁ</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 12.190</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">03</p>
+              <div>
+                <img class="img_phim" src="../../public/img/conganhmachay.png" alt="bautroixanhcuaem" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Cõng Anh Mà Chạy</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 19.234</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">04</p>
+              <div>
+                <img class="img_phim" src="../../public/img/giuaconbaotuyet.png" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">GIỮA CƠN BÃO TUYẾT</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">05</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chunibyo.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Chunibyo</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.342</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="top-all">
+          <p class="tex_top">TOP NĂM</p>
+          <div class="movie">
+            <div class="movie-i">
+              <p class="top-number">01</p>
+              <div>
+                <img class="img_phim" src="../../public/img/belle.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">RỒNG VÀ CÔNG CHÚA TÀN NHANG</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">02</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chuyentaubanggia.jpg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">CHUYẾN TÀU BĂNG GIÁ</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 12.190</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">03</p>
+              <div>
+                <img class="img_phim" src="../../public/img/conganhmachay.png" alt="bautroixanhcuaem" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Cõng Anh Mà Chạy</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 19.234</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">04</p>
+              <div>
+                <img class="img_phim" src="../../public/img/giuaconbaotuyet.png" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">GIỮA CƠN BÃO TUYẾT</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">05</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chunibyo.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Chunibyo</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.342</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="top-all">
+          <p class="tex_top">TOP VIEW</p>
+          <div class="movie">
+            <div class="movie-i">
+              <p class="top-number">01</p>
+              <div>
+                <img class="img_phim" src="../../public/img/belle.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">RỒNG VÀ CÔNG CHÚA TÀN NHANG</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">02</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chuyentaubanggia.jpg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">CHUYẾN TÀU BĂNG GIÁ</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 12.190</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">03</p>
+              <div>
+                <img class="img_phim" src="../../public/img/conganhmachay.png" alt="bautroixanhcuaem" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Cõng Anh Mà Chạy</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 19.234</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">04</p>
+              <div>
+                <img class="img_phim" src="../../public/img/giuaconbaotuyet.png" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">GIỮA CƠN BÃO TUYẾT</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">05</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chunibyo.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Chunibyo</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.342</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="top-all">
+          <p class="tex_top">TOP LIKE</p>
+          <div class="movie">
+            <div class="movie-i">
+              <p class="top-number">01</p>
+              <div>
+                <img class="img_phim" src="../../public/img/belle.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">RỒNG VÀ CÔNG CHÚA TÀN NHANG</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">02</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chuyentaubanggia.jpg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">CHUYẾN TÀU BĂNG GIÁ</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 12.190</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">03</p>
+              <div>
+                <img class="img_phim" src="../../public/img/conganhmachay.png" alt="bautroixanhcuaem" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Cõng Anh Mà Chạy</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 19.234</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">04</p>
+              <div>
+                <img class="img_phim" src="../../public/img/giuaconbaotuyet.png" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">GIỮA CƠN BÃO TUYẾT</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">05</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chunibyo.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Chunibyo</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.342</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="top-all">
+          <p class="tex_top">TOP FOLLOW</p>
+          <div class="movie">
+            <div class="movie-i">
+              <p class="top-number">01</p>
+              <div>
+                <img class="img_phim" src="../../public/img/belle.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">RỒNG VÀ CÔNG CHÚA TÀN NHANG</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">02</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chuyentaubanggia.jpg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">CHUYẾN TÀU BĂNG GIÁ</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 12.190</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">03</p>
+              <div>
+                <img class="img_phim" src="../../public/img/conganhmachay.png" alt="bautroixanhcuaem" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Cõng Anh Mà Chạy</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 19.234</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">04</p>
+              <div>
+                <img class="img_phim" src="../../public/img/giuaconbaotuyet.png" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">GIỮA CƠN BÃO TUYẾT</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.223</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+            <div class="movie-i">
+              <p class="top-number">05</p>
+              <div>
+                <img class="img_phim" src="../../public/img/chunibyo.jpeg" alt="Avengers: Endgame Poster" class="poster">
+              </div>
+              <div class="summary">
+                <p class="movie-des">Chunibyo</p>
+                <p class="movie-des">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                  <span>Lượt xem : 10.342</span>
+                </p>
+                <p class="movie-des">
+                  <i class="fa fa-rss" aria-hidden="true"></i>
+                  <span>Tình trạng : FULL</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="list-films ">
+          <p class="text_header">PHIM SẮP CHIẾU</p>
+          <div class="item">
+            <a href="#" title="harrypotter2">
+              <img class="img-film" src="../../public/img/harrypotter2.jpg" alt="Tên phim" />
+            </a>
+            <div class="film-details">
+              <div class="name">
+                <span><a href="#" title="harrypotter2">HARRY POTTER 2: CHAMBER SECRETS</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" title="xuccam16bit">
+              <img class="img-film" src="../../public/img/xuccam16bitjpeg.jpeg" alt="Tên phim" />
+            </a>
+            <div class="film-details">
+              <div class="name">
+                <span><a href="#" title="xuccam16bit">XÚC CẢM 16 BIT</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" title="vungdatquydu1">
+              <img class="img-film" src="../../public/img/vungdatquydu1.jpg" alt="Tên phim" />
+            </a>
+            <div class="film-details">
+              <div class="name">
+                <span><a href="#" title="vungdatquydu1">VÙNG ĐẤT QUỶ DỮ</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" title="vancodanhvong">
+              <img class="img-film" src="../../public/img/vancodanhvong.jpeg" alt="Tên phim" />
+            </a>
+            <div class="film-details">
+              <div class="name">
+                <span><a href="#" title="vancodanhvong">VÁN CỜ DANH VỌNG </a></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="list-films ">
+          <p class="text_header">PHIM HOT</p>
+          <div class="item">
+            <a href="#" title="tomuonantuycuacaum">
+              <img class="img-film" src="../../public/img/tomuonantuycuacau.jpeg" alt="Tên phim" />
+            </a>
+            <div class="film-details">
+              <div class="name">
+                <span><a href="#" title="tomuonantuycuacau">TỚ MUỐN ĂN TỦY CỦA CẬU</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" title="tiemchupanhmaquai">
+              <img class="img-film" src="../../public/img/tiemchupanhmaquai.jpg" alt="Tên phim" />
+            </a>
+            <div class="film-details">
+              <div class="name">
+                <span><a href="#" title="tiemchupanhmaquai">TIỆM CHỤP ẢNH MA QUÁI</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" title="THOSANGAMERAC">
+              <img class="img-film" src="../../public/img/THOSANGAMERACTHACHTHUCGAMECAPTHANH.jpeg" alt="Tên phim" />
+            </a>
+            <div class="film-details">
+              <div class="name">
+                <span><a href="#" title="THOSANGAMERAC">THỢ SĂN GAME RÁC</a></span>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <a href="#" title="vungdatquydu3">
+              <img class="img-film" src="../../public/img/vungdatquydu3.jpg" alt="Tên phim" />
+            </a>
+            <div class="film-details">
+              <div class="name">
+                <span><a href="#" title="vungdatquydu3">VÙNG ĐẤT QUỶ DỮ 3</a></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <section class="rating">
+      <div class="review-list" id="review-list">
+      </div>
+    </section>
+
+    <section class="comment-section">
+      <h2>Bình luận</h2>
+      <input type="text" id="username-input" placeholder="Tên của bạn" />
+      <textarea id="comment-input" placeholder="Viết bình luận của bạn..."></textarea>
+      <button onclick="addComment()">Gửi bình luận</button>
+      <div class="comment-list" id="comment-list">
+        <!-- Các bình luận từ người dùng sẽ được chèn ở đây -->
+      </div>
+    </section>
+  </div>
+  <button id="toggle-theme" class="round-button">🌓</button>
+  <button id="scroll-to-top" style="display:none;">Lên đầu trang</button>
+  <button id="scroll-to-bottom" style="display:none;">Xuống cuối trang</button>
+  <footer>
+    <div class="container">
+      <div class="logo"><img src="../../public/img/logo.png" alt="logo" style="width:60px;"></div>
+      <div class="footer">
+        <div class="contact-info">
+          Địa chỉ: Nhóm 2, D14CNPM4 <br>
+          Đại Học điện lực, Hoàng Quốc Việt,Cổ Nhuế, Bắc Từ Liêm, Hà Nội<br>
+          Email: abc@gmail.com<br>
+          Hotline: 0123.456.789 (miễn phí)
+        </div>
+        <div class="nav-links">
+          <div class="nav-link"><a href="../../GioiThieu/index.html">GIỚI THIỆU</a></div>
+          <div class="nav-link"><a href="../../GioiThieu/index.html">QUY ĐỊNH</a></div>
+          <div class="nav-link"><a href="../../GioiThieu/index.html">THÔNG TIN</a></div>
+        </div>
+      </div>
+      <div class="qr-code">
+        <img src="../../public/img/halls.png" alt="QR Code" style="width: 100px;">
+        <div>Quét mã QR để tải ứng dụng</div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

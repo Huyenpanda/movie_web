@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/body.css">
+    <title>Halls.com</title>
+</head>
+<div id="curtain">
+    <img src="../../public/img/logo.png" alt="">
+</div>
+
+<body>
+    <header>
+        <div id="min_menu">
+            <a style="margin-left: 10px; margin-right: 10px;" onclick="moMenu()"><i class="fa-solid fa-bars"></i>
+            </a>
+            <ul id="min_menu">
+                <li><a href="trang_chu.html" target="main" rel="noopener noreferrer" onclick="minthongbao(this)"></i>
+                        Trang chủ</a></li>
+                <li><a href="phim_th.html" target="main" rel="noopener noreferrer" onclick="minthongbao(this)">Phim
+                        T.hình</a></li>
+                <li><a href="phim_th.html" target="main" rel="noopener noreferrer" onclick="minthongbao(this)">Mới
+                        thêm</a></li>
+                <li><a href="ds_cuatoi.html" target="main" rel="noopener noreferrer" onclick="minthongbao(this)">Danh
+                        sách của tôi</a></ </ul>
+        </div>
+
+
+        <a href=""><img src="../../public/img/logo.png" alt=""></a>
+        <ul id="ul_left">
+            <li><a href="trang_chu.html" onclick="thong_bao(this)" target="main" rel="noopener noreferrer"><i
+                        class="fa-solid fa-house"></i> Trang chủ <div class="tick" style="display: flex;"></div></a>
+            </li>
+            <li><a href="phim_th.html" onclick="thong_bao(this)" target="main" rel="noopener noreferrer">Phim T.hình
+                    <div class="tick"></div>
+                </a></li>
+            <li><a href="phim_th.html" target="main" onclick="thong_bao(this)" rel="noopener noreferrer">Mới thêm<div
+                        class="tick"></div></a></li>
+            <li><a href="ds_cuatoi.html" target="main" onclick="thong_bao(this)" rel="noopener noreferrer">Danh sách của
+                    tôi<div class="tick"></div></a></li>
+        </ul>
+        <ul id="ul_right">
+            <li style="width: auto; justify-content: end; position: relative; "><a onclick="search1(this)"
+                    style="z-index: 2; margin-right: 16px;"><i class="fa-solid fa-magnifying-glass"></i></a><input
+                    type="text" id="search" placeholder="ex: tên phim"></li>
+            <li><a href=""><i class="fa-regular fa-bell"></i></a></li>
+            <li><a href="login1.html"><i class="fa-solid fa-right-to-bracket"></i></a></li>
+        </ul>
+    </header>
+    <iframe src="trang_chu.html" name="main" frameborder="0"></iframe>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

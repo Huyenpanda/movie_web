@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô Tả Phim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/mtphim.css">
+    <script src="../js/mtphim.js"></script>
+</head>
+
+<body class="dark-mode">
+    <div class="container">
+        <div class="header" style="height: 40px;"></div>
+
+        <div class="video-banner">
+            <video class="video-slide active" autoplay muted loop>
+                <source src="../../public/short-video/Teaser_ChuyenTauBangGia.mp4" type="video/mp4">
+            </video>
+
+        </div>
+        <div class="breadcrumb">
+            <a href="./body.html">Trang chủ</a>
+            >>
+            <a href="../Tim_phim_the_loai/theloai.html">Thể loại</a>
+            >>
+            <a href="./mtphim.html">Cõng Anh Mà Chạy</a>
+        </div>
+        <p class="movie_name">CÕNG ANH MÀ CHẠY</p>
+        <section class="movie-summary">
+
+            <img class="img_phim" src="../../public/img/conganhmachay.png" alt="conganhmachay" class="poster">
+            <div class="summary">
+                <div class="summary_items">
+                    <div class="summary_items_i">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        <span>Tên khác</span>
+                    </div>
+                    <div class="summary_items_des">
+                        <p>Lovely Runner; Cõng Anh Mà Chạy; Cõng Anh Đi Mà Chạy</p>
+                    </div>
+                </div>
+                <div class="summary_items">
+                    <div class="summary_items_i">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Diễn Viên</span>
+                    </div>
+                    <div class="summary_items_des">
+                        <p>Kim Hye Yoon; Byeon Woo Seok; Song Geon Hee...</p>
+                    </div>
+                </div>
+                <div class="summary_items">
+                    <div class="summary_items_i">
+                        <i class="fa fa-rss" aria-hidden="true"></i>
+                        <span>Tình trạng</span>
+                    </div>
+                    <div class="summary_items_des">
+                        <p>FULL</p>
+                    </div>
+                </div>
+                <div class="summary_items">
+                    <div class="summary_items_i">
+                        <i class="fa fa-tags" aria-hidden="true"></i>
+                        <span>Thể loại</span>
+                    </div>
+                    <div class="summary_items_des">
+                        <p>Xuyên Không; Học Đường; Tình Cảm; Hàn Quốc</p>
+                    </div>
+                </div>
+                <div class="summary_items">
+                    <div class="summary_items_i">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>Lượt xem</span>
+                    </div>
+                    <div class="summary_items_des">
+                        <p>8.346</p>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button class="like-button">
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i><span
+                            style="margin-left:  10px ;">Like</span></button>
+                    <button class="share-button" onclick="shareToFacebook()">Share to Facebook</button>
+                </div>
+                <p>Nội dung: </p>
+                <p style="text-align: justify;">Cõng Anh Mà Chạy xoay quanh câu chuyện tình cảm của cô nàng Im Sol và
+                    thần tượng của cô là Ryu Sun Jae, một ngôi sao K-Pop hàng đầu. Bất ngờ du hành về thời gian 15 năm
+                    trước, Im Sol được gặp gỡ Sun Jae khi anh vẫn còn là học sinh trung học. Kể từ đó, cô phải đối mặt
+                    với nhiều thử thách khó khăn để ngăn cản Sun Jae gặp phải kết cục bất hạnh trong tương lai.</p>
+            </div>
+
+        </section>
+
+        <div class="button">
+            <button class="watch-button" style="background-color: rgb(214, 78, 78);">XEM PHIM</span>
+            </button>
+            <button class="like-button" style="background-color: rgb(168, 85, 213);">
+                <i class="fa-regular fa-heart"></i><span style="margin-left:  10px ;">Theo dõi</span>
+            </button>
+            <button class="watch-button" style="background-color: rgb(105, 206, 17);">XEM TỪ ĐẦU</span>
+            </button>
+        </div>
+        <div class="left-content" id="page-info">
+            <div class="list-films film-new">
+                <p class="text_header">PHIM LIÊN QUAN</p>
+                <ul>
+                    <li class="item ">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="100 Cô bạn gái">
+                            <img class="img-film" style="height: 120px;" src="../../public/img/100cobangai.jpeg"
+                                title="100 Cô bạn gái" alt="100 Cô bạn gái" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="100 Cô bạn gái 2019">100 CÔ BẠN GÁI 2019</a></span>
+                        </div>
+                    </li>
+                    <li class="item ">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="belle">
+                            <img class="img-film" src="../../public/img/belle.jpeg" title="belle" alt="belle" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="belle">RỒNG VÀ CÔNG CHÚA TÀN NHANG</a></span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="chunibyo">
+                            <img class="img-film" src="../../public/img/chunibyo.jpeg" title="chunibyo"
+                                alt="chunibyo" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="chunibyo">CUỘC THÁM HIỂM CỦA CHUNIBYO</a></span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="doraemon">
+                            <img class="img-film" src="../../public/img/doraemondoibanthan.jpg" title="doraemon"
+                                alt="doraemon" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="doraemon">DORAEMON - ĐÔI BẠN THÂN</a></span>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="item ">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="100 Cô bạn gái">
+                            <img class="img-film" style="height: 120px;" src="../../public/img/100cobangai.jpeg"
+                                title="100 Cô bạn gái" alt="100 Cô bạn gái" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="100 Cô bạn gái 2019">100 CÔ BẠN GÁI 2019</a></span>
+                        </div>
+                    </li>
+                    <li class="item ">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="belle">
+                            <img class="img-film" src="../../public/img/belle.jpeg" title="belle" alt="belle" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="belle">RỒNG VÀ CÔNG CHÚA TÀN NHANG</a></span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="chunibyo">
+                            <img class="img-film" src="../../public/img/chunibyo.jpeg" title="chunibyo"
+                                alt="chunibyo" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="chunibyo">CUỘC THÁM HIỂM CỦA CHUNIBYO</a></span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="doraemon">
+                            <img class="img-film" src="../../public/img/doraemondoibanthan.jpg" title="doraemon"
+                                alt="doraemon" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="doraemon">DORAEMON - ĐÔI BẠN THÂN</a></span>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="item ">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="100 Cô bạn gái">
+                            <img class="img-film" style="height: 120px;" src="../../public/img/100cobangai.jpeg"
+                                title="100 Cô bạn gái" alt="100 Cô bạn gái" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="100 Cô bạn gái 2019">100 CÔ BẠN GÁI 2019</a></span>
+                        </div>
+                    </li>
+                    <li class="item ">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="belle">
+                            <img class="img-film" src="../../public/img/belle.jpeg" title="belle" alt="belle" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="belle">RỒNG VÀ CÔNG CHÚA TÀN NHANG</a></span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="chunibyo">
+                            <img class="img-film" src="../../public/img/chunibyo.jpeg" title="chunibyo"
+                                alt="chunibyo" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="chunibyo">CUỘC THÁM HIỂM CỦA CHUNIBYO</a></span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="label">Hoàn Tất (16/16) Vietsub</span>
+                        <a href="#" title="doraemon">
+                            <img class="img-film" src="../../public/img/doraemondoibanthan.jpg" title="doraemon"
+                                alt="doraemon" />
+                        </a>
+                        <div class="name">
+                            <span><a href="#" title="doraemon">DORAEMON - ĐÔI BẠN THÂN</a></span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <section class="rating">
+            <p style="font-size: xx-large;">Đánh giá và xếp hạng</p>
+            <div class="rating-score">
+                <span>★★★★☆</span>
+                <p>8.5/10 từ 1000 đánh giá</p>
+            </div>
+            <div class="review-list" id="review-list">
+                <!-- Các đánh giá từ người dùng sẽ được chèn ở đây -->
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <h2>Bình luận</h2>
+            <input type="text" id="username-input" placeholder="Tên của bạn" />
+            <textarea id="comment-input" placeholder="Viết bình luận của bạn..."></textarea>
+            <button onclick="addComment()">Gửi bình luận</button>
+            <div class="comment-list" id="comment-list">
+                <!-- Các bình luận từ người dùng sẽ được chèn ở đây -->
+            </div>
+        </section>
+    </div>
+
+    <button id="toggle-theme" class="round-button">🌓</button>
+    <button id="scroll-to-top" style="display:none;">Lên đầu trang</button>
+    <button id="scroll-to-bottom" style="display:none;">Xuống cuối trang</button>
+    <footer>
+        <div class="container">
+            <div class="logo"><img src="../../public/img/logo.png" alt="logo" style="width:60px;"></div>
+            <div class="footer">
+                <div class="contact-info">
+                    Địa chỉ: Nhóm 2, D14CNPM4 <br>
+                    Đại Học điện lực, Hoàng Quốc Việt,Cổ Nhuế, Bắc Từ Liêm, Hà Nội<br>
+                    Email: abc@gmail.com<br>
+                    Hotline: 0123.456.789 (miễn phí)
+                </div>
+                <div class="nav-links">
+                    <div class="nav-link"><a href="../../GioiThieu/index.html">GIỚI THIỆU</a></div>
+                    <div class="nav-link"><a href="../../GioiThieu/index.html">QUY ĐỊNH</a></div>
+                    <div class="nav-link"><a href="../../GioiThieu/index.html">THÔNG TIN</a></div>
+                </div>
+            </div>
+            <div class="qr-code">
+                <img src="../../public/img/halls.png" alt="QR Code" style="width: 100px;">
+                <div>Quét mã QR để tải ứng dụng</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
